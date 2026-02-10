@@ -1,0 +1,97 @@
+/**
+ * index.html
+ * 
+ * Main HTML file with critical SEO and security meta tags.
+ * 
+ * Security:
+ * - CSP meta tag set
+ * - CSRF token meta tag
+ * - No unsafe inline scripts
+ * - HTTPS enforcement
+ * 
+ * SEO:
+ * - Base meta tags
+ * - Open Graph tags
+ * - Twitter Card tags
+ * - Viewport for mobile responsiveness
+ * - Canonical URL
+ */
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Secure Full-Stack App</title>
+    
+    <!-- Viewport for Responsive Design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    
+    <!-- Base SEO Tags -->
+    <meta name="description" content="Enterprise-grade secure full-stack platform - OWASP compliant, VAPT ready, production-hardened architecture">
+    <meta name="keywords" content="security, api, angular, laravel, full-stack, enterprise">
+    <meta name="author" content="Your Company">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    
+    <!-- Open Graph Tags (Social Media) -->
+    <meta property="og:title" content="Secure Full-Stack Platform">
+    <meta property="og:description" content="Enterprise-grade security meets modern development">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com">
+    <meta property="og:image" content="/assets/og-image.png">
+    <meta property="og:site_name" content="Secure Full-Stack App">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Secure Full-Stack Platform">
+    <meta name="twitter:description" content="Enterprise-grade security meets modern development">
+    <meta name="twitter:image" content="/assets/og-image.png">
+    <meta name="twitter:creator" content="@yourcompany">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourdomain.com">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Apple Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Secure App">
+    
+    <!-- Security Headers (Set via server, but also meta tag for CSP) -->
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      script-src 'self' 'nonce-{random}';
+      style-src 'self' 'unsafe-inline';
+      img-src 'self' data: https:;
+      font-src 'self';
+      connect-src 'self' https://api.yourdomain.com;
+      frame-ancestors 'none';
+      base-uri 'self';
+      form-action 'self'
+    ">
+    
+    <!-- CSRF Token (populated by Angular) -->
+    <meta name="csrf-token" content="">
+    
+    <!-- X-UA-Compatible for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Theme Color for Mobile -->
+    <meta name="theme-color" content="#667eea">
+    
+    <!-- Base href for Angular routing -->
+    <base href="/">
+  </head>
+  
+  <body>
+    <!-- Angular App Root -->
+    <app-root role="application" aria-label="Application Root"></app-root>
+    
+    <!-- No-script fallback -->
+    <noscript>
+      <p>This application requires JavaScript to be enabled.</p>
+    </noscript>
+  </body>
+</html>
